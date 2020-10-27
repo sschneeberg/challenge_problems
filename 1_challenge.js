@@ -3,7 +3,9 @@ Make a function createNewElement(tagName, text) that takes in 2
 parameters and returns a new element with the correct text
 ************************************************************** */
 function createNewElement(tagName, text) {
-    
+    let newEl = document.createElement(tagName);
+    newEl.innerText = text;
+    return newEl;
 }
 
 console.log(createNewElement('p', 'I am a software engineer'));
@@ -18,12 +20,18 @@ Make a function giveMeKeys(array) that takes in an array of objects
 and returns a new array with all of the keys from each object
 ************************************************************** */
 const instuctors = [
-    { rome: 'Rome', pete: 'Pete'},
-    { mike: 'Mike', dex: 'Dexter'},
+    { rome: 'Rome', pete: 'Pete' },
+    { mike: 'Mike', dex: 'Dexter' },
     { ga: 'General Assembly', cohort: 'SEI1019' }
 ]
 
 const giveMeKeys = (array) => {
+    let objKeys = [1];
+    for (entry of array) {
+        let entryKeys = Object.keys(entry);
+        objKeys = objKeys.concat(entryKeys);
+    }
+    return objKeys;
 
 }
 
