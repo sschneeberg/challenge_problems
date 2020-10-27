@@ -26,10 +26,14 @@ const instuctors = [
 ]
 
 const giveMeKeys = (array) => {
-    let objKeys = [1];
+    let objKeys = [];
     for (entry of array) {
-        let entryKeys = Object.keys(entry);
-        objKeys = objKeys.concat(entryKeys);
+        //let entryKeys = Object.keys(entry);
+        //objKeys = objKeys.concat(entryKeys);
+        //of use for in
+        for (key in entry) {
+            objKeys.push(key);
+        }
     }
     return objKeys;
 
